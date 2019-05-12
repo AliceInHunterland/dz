@@ -220,5 +220,6 @@ mat_pd, vec_pd = generate_positive_definite()
 
 print('A:', mat_pd)
 print('b:', vec_pd.T)
+krya=jacobi(mat_pd,vec_pd)
 x_s_pd = seidel(mat_pd, vec_pd)
 print('Сравнение с положительно определённой матрицей:', np.dot(mat_pd, x_s_pd) - vec_pd)
