@@ -48,12 +48,13 @@ def experiment():
     dots=[]
     for k in range(10, 501, 20):
         times_sum = 0
-        for i in range(20):
+        counts_of_experiments = 20
+        for i in range(counts_of_experiments):
             A,b=generator(k)
             start_time = time.time()
             gauss(A,b)
             times_sum += time.time() - start_time
-        middle_time = times_sum / 10.0
+        middle_time = times_sum / counts_of_experiments
         dots.append(k)
         times.append(middle_time)
         print(k, ': ', '{:.5f}'.format(middle_time), end='\n')
